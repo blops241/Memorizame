@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Menú lateral */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #e3f2fd;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.3s ease;
+    transform: translateX(0);
+}
+
+/* Animación de hover en los ítems del menú */
+.menu-item {
+    padding: 15px 20px;
+    color: #424242;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.menu-item:hover {
+    background-color: #bbdefb;
+    transform: translateX(10px);
+}
+
+.menu-item.active {
+    background-color: #90caf9;
+    color: #0d47a1;
+    box-shadow: inset 4px 0 0 #0d47a1;
+}
+
+/* Ocultar menú en pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #1565c0;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: #1565c0; /* Azul más oscuro */
+}
+
+.menu-item {
+    padding: 15px 20px;
+    color: #424242;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.menu-item:hover {
+    background-color: #bbdefb;
+}
+
+.menu-item.active {
+    background-color: #90caf9;
+    color: #0d47a1;
+}
+
+.menu-item i {
+    margin-right: 10px;
+}
+
+/* Contenido principal */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Fondo de la página */
+body {
+    background: url('fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        padding-top: 60px;
+    }
+}
+
+.logo {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo img {
+    width: 150px;
+    max-width: 80%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
