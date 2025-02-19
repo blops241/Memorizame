@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorizame - Menú</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    
+    <div class="sidebar">
+        <!-- Reemplazamos el texto por la imagen del logotipo -->
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo Memorizame">
+        </div>
+        
+        <a href="#" class="menu-item active">Inicio</a>
+        <a href="#" class="menu-item">Recordatorios</a>
+        <a href="#" class="menu-item">Citas Médicas</a>
+        <a href="#" class="menu-item">Actividades Sociales</a>
+        <a href="#" class="menu-item">Lugares de Interés</a>
+        <a href="#" class="menu-item">Configuración</a>
+        <a href="#" class="menu-item">Cerrar Sesión</a>
+    </div>
+
+    <div class="content">
+        <h1>Bienvenido a Memorizame</h1>
+        <p></p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
